@@ -4,38 +4,45 @@
 
     <h2>{{ page_title }}</h2>
     <p>
-        Hi there! I am the creator of Foretell & Company, an Afrofuturism website that aims to explore the intersection
-        of autochthonous culture and science fiction.
-
-        I've always been fascinated with the idea of a future that is inclusive and representative of all people,
-        especially those of aboriginal descent. That's why I started this platform, to imagine and showcase a world
-        where autochthonous people not only exist, but thrive and shape the future on their own terms.
-
-        Foretell & Company features articles, podcasts, and videos that delve into the realm of Afrofuturism and its
-        impact on art, music, film, technology, and more. I want to provide a space for autochthonous creatives to
-        showcase their works, share their thoughts and ideas, and engage in conversations about the future of our
-        communities.
-
-        I'm passionate about this project and I hope to inspire others to join me in this journey of exploring the vast
-        potential of Afrofuturism. Join me and let's imagine a future that's not only diverse, but bold and
-        unapologetically powerful!
+        Welcome to my site. Enjoy your stay and learn more about what we've got going on here!
     </p>
 
     {% for member in company %}
 
         <div class="row featurette">
-            <div class="col-md-7">
-                <h3>{{ member.name }}</h3>
-                <p>
-                    {{ member.description }}
-                </p>
-            </div>
-            <div class="col-md-5">
-                <img src="{{ member.image_source}}" alt="" class="featurette-image image-responsive">
-            </div>
+
+            {% if loop.index % 2 != 0 %}
+                <div class="col-md-7">
+                    <h3>{{ loop.index }}. {{ member.name }}</h3>
+                    <p>
+                        {{ member.description }}
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img src="{{ member.image_source}}" alt="" class="featurette-image image-responsive">
+                </div>
+
+            {% else %}    
+
+                <div class="col-md-5">
+                    <img src="{{ member.image_source}}" alt="" class="featurette-image image-responsive">
+                </div>
+                <div class="col-md-7">
+                    <h3>{{ loop.index }}. {{ member.name }}</h3>
+                    <p>
+                        {{ member.description }}
+                    </p>
+                </div>
+
+            {% endif %}
+
         </div>
 
-        <hr class="featurette-divider">
+        {% if loop.index != loop.length %}
+
+            <hr class="featurette-divider">
+
+        {% endif %}
 
     {% endfor %}
 
