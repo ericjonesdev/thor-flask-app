@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-    <h2>About Us</h2>
+
+
+    <h2>{{ page_title }}</h2>
     <p>
         Hi there! I am the creator of Foretell & Company, an Afrofuturism website that aims to explore the intersection
         of autochthonous culture and science fiction.
@@ -19,12 +21,22 @@
         unapologetically powerful!
     </p>
 
-    <div class="row featurette">
-        <div class="col-md-7">
-            <h3>Eric Jones</h3>
-            <p>
-                
-            </p>
+    {% for member in company %}
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h3>{{ member.name }}</h3>
+                <p>
+                    {{ member.description }}
+                </p>
+            </div>
+            <div class="col-md-5">
+                <img src="{{ member.image_source}}" alt="" class="featurette-image image-responsive">
+            </div>
         </div>
-    </div>
+
+        <hr class="featurette-divider">
+
+    {% endfor %}
+
 {% endblock %}
