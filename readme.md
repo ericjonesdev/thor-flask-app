@@ -1,1 +1,1 @@
-Foretell and Company is a Flask web app centered on Afrofuturism. It displays a knowledge of Python, Flask, HTML5, and CSS. View live website <a href="https://foretell-and-company.herokuapp.com/about">Here</a>
+Foretell and Company is a Flask web app centered on Afrofuturism. It displays a knowledge of Python, Flask, custom routing, template logic, JSON data store, HTML5, and CSS. View live website <a href="https://foretell-and-company.herokuapp.com/about">Here</a>
